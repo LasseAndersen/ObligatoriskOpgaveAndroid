@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "597691388209",
+    "firebase_url": "https://obligatoriskopgave-c3af3.firebaseio.com",
+    "project_id": "obligatoriskopgave-c3af3",
+    "storage_bucket": "obligatoriskopgave-c3af3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:597691388209:android:575133d3a1e0065f",
+        "android_client_info": {
+          "package_name": "com.example.sels1.obligatoriskopgave"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "597691388209-qnsevha0m54iidgo1nbvr9i965tuc0lm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sels1.obligatoriskopgave",
+            "certificate_hash": "70920f6201f20787873474b98b38652e6779279c"
+          }
+        },
+        {
+          "client_id": "597691388209-65q1drv55he7e3lddflmbrh89b5imdq5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnlwngya9PGbeooTwK-Z0G22aXw7-ba0E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "597691388209-65q1drv55he7e3lddflmbrh89b5imdq5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
