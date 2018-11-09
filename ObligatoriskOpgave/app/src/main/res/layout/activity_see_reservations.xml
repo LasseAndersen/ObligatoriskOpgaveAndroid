@@ -4,27 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserLogInActivity">
+    tools:context=".SeeReservationsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:gravity="center">
 
-       <Button
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:id="@+id/UserReservationButton"
-           android:onClick="ViewReservations"
-           android:text="@string/Reservation"/>
-        <Button
+        <ListView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/AddReservationButton"
-            android:text="@string/AddReservation"
-            android:onClick="AddReservation"/>
-
+            android:id="@+id/SeeReservationBuildingListView">
+        </ListView>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

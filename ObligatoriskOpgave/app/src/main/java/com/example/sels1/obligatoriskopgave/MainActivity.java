@@ -5,8 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity {
 
+
+    FirebaseUser user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -14,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void GoToLogin(View view){
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, UserLogInActivity.class);
+        intent.putExtra("USER", user);
         startActivity(intent);
     }
 }

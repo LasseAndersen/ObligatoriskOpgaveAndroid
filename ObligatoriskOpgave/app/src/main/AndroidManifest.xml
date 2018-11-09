@@ -18,7 +18,10 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".UerloginActivity" />
-        <activity android:name=".UserLogInActivity"></activity>
+        <activity android:name=".UserLogInActivity" />
+        <activity android:name=".SeeReservationsActivity" />
+        <activity android:name=".AddReservationActivity" />
+        <activity android:name=".RoomsInBuildingActivity"></activity>
     </application>
 
 </manifest>
