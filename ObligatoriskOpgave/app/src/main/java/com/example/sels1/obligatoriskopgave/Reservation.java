@@ -1,6 +1,8 @@
 package com.example.sels1.obligatoriskopgave;
 
-public class Reservation {
+import java.io.Serializable;
+
+public class Reservation implements Serializable {
 
     private String fromTimeString;
     private String toTimeString;
@@ -57,7 +59,10 @@ public class Reservation {
         this.purpose = purpose;
         this.id = id;
     }
-    public String ToString(){
-        return "lokale: " + id + "Reserveret fra: " + fromTimeString + " til " + toTimeString + " af: " + userId;
+
+
+    @Override
+    public String toString() {
+        return "lokale id: " + id + " Reserveret fra: " + fromTimeString + " til " + toTimeString + " af bruger: " + userId;
     }
 }
