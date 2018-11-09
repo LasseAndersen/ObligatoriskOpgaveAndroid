@@ -1,6 +1,9 @@
 package com.example.sels1.obligatoriskopgave;
 
-public class Room {
+import java.io.Serializable;
+
+public class Room implements Serializable {
+
     private String name;
     private String description;
     private String remarks;
@@ -65,7 +68,8 @@ public class Room {
         this.buildingId = buildingId;
     }
 
-    public String ToString(){
-        return "Rum navn: " + name + " rum id: " + id + " i bygning: " + buildingId;
+    @Override
+    public String toString() {
+         return "Rum navn: " + name + " rum id: " + id + " i bygning: " + buildingId;
     }
 }
