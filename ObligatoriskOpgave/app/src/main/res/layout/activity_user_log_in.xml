@@ -17,13 +17,19 @@
            android:layout_height="wrap_content"
            android:id="@+id/UserReservationButton"
            android:onClick="ViewReservations"
-           android:text="@string/Reservation"/>
+           android:text="@string/SeeReservation"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/AddReservationButton"
             android:text="@string/AddReservation"
             android:onClick="AddReservation"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/DeleteReservationButton"
+            android:text="@string/Delete"
+            android:onClick="DeleteReservation"/>
 
     </LinearLayout>
 

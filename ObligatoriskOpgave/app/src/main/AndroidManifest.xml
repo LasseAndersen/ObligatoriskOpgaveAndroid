@@ -23,7 +23,8 @@
         <activity android:name=".AddReservationActivity" />
         <activity android:name=".RoomsInBuildingActivity" />
         <activity android:name=".ReservationInRoomsActivity" />
-        <activity android:name=".ShowReservationActivity"></activity>
+        <activity android:name=".ShowReservationActivity" />
+        <activity android:name=".DeleteReservationActivity"></activity>
     </application>
 
 </manifest>

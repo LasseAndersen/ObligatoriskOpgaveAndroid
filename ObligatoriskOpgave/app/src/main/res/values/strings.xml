@@ -2,5 +2,10 @@
     <string name="app_name">ObligatoriskOpgave</string>
     <string name="login"> Login </string>
     <string name="Reservation"> Reservation </string>
+    <string name="SeeReservation"> See Reservation </string>
     <string name="AddReservation"> Add Reservation </string>
+    <string name="Delete"> Delete Reservation </string>
+    <string name="FromTime"> From Time </string>
+    <string name="ToTime"> To Time </string>
+    <string name="Purpose"> Purpose </string>
 </resources>

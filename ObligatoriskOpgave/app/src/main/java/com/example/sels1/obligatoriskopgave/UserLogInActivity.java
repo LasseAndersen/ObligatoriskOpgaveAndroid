@@ -29,4 +29,9 @@ public class UserLogInActivity extends AppCompatActivity {
         intent.putExtra("USER", user);
         startActivity(intent);
     }
+    public void DeleteReservation(View v){
+        Intent intent = new Intent(this, DeleteReservationActivity.class);
+        intent.putExtra("USER", user);
+        startActivity(intent);
+    }
 }
