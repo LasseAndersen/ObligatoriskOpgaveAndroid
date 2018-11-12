@@ -25,7 +25,7 @@ public class UserLogInActivity extends AppCompatActivity {
     }
 
     public void AddReservation(View v){
-        Intent intent = new Intent(this, AddReservationActivity.class);
+        Intent intent = new Intent(this, AvailableBuildings.class);
         intent.putExtra("USER", user);
         startActivity(intent);
     }

@@ -24,7 +24,10 @@
         <activity android:name=".RoomsInBuildingActivity" />
         <activity android:name=".ReservationInRoomsActivity" />
         <activity android:name=".ShowReservationActivity" />
-        <activity android:name=".DeleteReservationActivity"></activity>
+        <activity android:name=".DeleteReservationActivity" />
+        <activity android:name=".AvailableBuildings" />
+        <activity android:name=".AvailableRooms" />
+        <activity android:name=".SeeMyReservation"></activity>
     </application>
 
 </manifest>
