@@ -24,7 +24,7 @@ import okhttp3.Response;
 public class DeleteReservationActivity extends AppCompatActivity {
 
     FirebaseUser user;
-
+    String Uri;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,10 +32,19 @@ public class DeleteReservationActivity extends AppCompatActivity {
         user =(FirebaseUser) getIntent().getExtras().get("USER");
         String userId = "11";
                 //user.getUid();
-        GetMyReservationsTask task = new GetMyReservationsTask();
+
         String uri = MessageFormat.format("https://anbo-roomreservation.azurewebsites.net/api/reservations/user/{0}",userId);
-        task.execute(uri);
+        Uri = uri;
+
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        GetMyReservationsTask task = new GetMyReservationsTask();
+        task.execute(Uri);
+    }
+
     private class GetMyReservationsTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... strings) {

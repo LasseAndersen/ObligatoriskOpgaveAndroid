@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseUser;
@@ -21,6 +22,7 @@ public class DeleteSpecificReservation extends AppCompatActivity {
     FirebaseUser user;
     Reservation reservation;
     String uri;
+    DeleteReservationTask task;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,17 +31,24 @@ public class DeleteSpecificReservation extends AppCompatActivity {
         user =(FirebaseUser) getIntent().getExtras().get("USER");
         reservation = (Reservation) getIntent().getExtras().get("RESERVATION");
         uri = "https://anbo-roomreservation.azurewebsites.net/api/reservations/";
+        task = new DeleteReservationTask();
 
 
     }
+    public void DoDelete(View view){
+        task.execute();
+       /* Intent intent = new Intent(getBaseContext(), DeleteReservationActivity.class);
+        intent.putExtra("USER", user);
+        startActivity(intent);
+        */
+    }
+
     private class DeleteReservationTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... strings) {
-
             String code = "";
             HttpUrl route = HttpUrl.parse(uri).newBuilder().addPathSegment(reservation.getId()).build();
             Request request = new Request.Builder().url(route).delete().build();
-
             try{
                 OkHttpClient client = new OkHttpClient.Builder().build();
                 Response response = client.newCall(request).execute();
@@ -51,17 +60,16 @@ public class DeleteSpecificReservation extends AppCompatActivity {
                 Log.e("Delete", ex.getMessage());
             }
             return null;
-
         }
+
+
         @Override
         protected void onPostExecute(String JsonString) {
 
             if (JsonString.equals("complete"))
             {
                 Toast.makeText(DeleteSpecificReservation.this, "Reservation deleted", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getBaseContext(), DeleteReservationActivity.class);
-                intent.putExtra("USER",user);
-                startActivity(intent);
+                finish();
             }
             else if (JsonString.equals("not found"))
             {
@@ -73,5 +81,6 @@ public class DeleteSpecificReservation extends AppCompatActivity {
             }
 
         }
+
     }
 }
