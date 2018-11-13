@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeleteReservationActivity">
+    tools:context=".DeleteSpecificReservation">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:gravity="center">
-
-        <ListView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/DeleteReservationListView"/>
+            android:id="@+id/DeleteButton"
+            android:onClick="DeleteReservationTask"/>
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
