@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/SignOut"
+        android:title="@string/signOut"
+        android:icon="@drawable/common_google_signin_btn_icon_light_normal"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/logOut"
+        android:title="Logout"
+        app:showAsAction="never"/>
+    <item
+        android:title="About"
+        android:id="@+id/About"
+        app:showAsAction="never"/>
+
+</menu>

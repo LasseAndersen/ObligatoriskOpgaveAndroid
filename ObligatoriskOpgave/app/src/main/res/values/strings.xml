@@ -8,4 +8,6 @@
     <string name="FromTime"> From Time </string>
     <string name="ToTime"> To Time </string>
     <string name="Purpose"> Purpose </string>
+    <string name="signOut">Sign out</string>
+
 </resources>
