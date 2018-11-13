@@ -25,7 +25,17 @@
             android:layout_height="wrap_content"
             android:text="@string/login"
             android:id="@+id/LoginButton"
-            android:onClick="Login"/>
+            android:onClick="loginButtonClicked"/>
+        <CheckBox
+            android:id="@+id/login_remember_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:hint="Remember" />
+        <TextView
+            android:id="@+id/login_message_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
