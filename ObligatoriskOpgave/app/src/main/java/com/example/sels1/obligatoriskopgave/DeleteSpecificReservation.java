@@ -19,7 +19,7 @@ import okhttp3.Response;
 
 public class DeleteSpecificReservation extends AppCompatActivity {
 
-    FirebaseUser user;
+    String user;
     Reservation reservation;
     String uri;
     DeleteReservationTask task;
@@ -28,7 +28,7 @@ public class DeleteSpecificReservation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_specific_reservation);
-        user =(FirebaseUser) getIntent().getExtras().get("USER");
+        user =(String) getIntent().getExtras().get("USERNAME");
         reservation = (Reservation) getIntent().getExtras().get("RESERVATION");
         uri = "https://anbo-roomreservation.azurewebsites.net/api/reservations/";
         task = new DeleteReservationTask();
@@ -73,7 +73,7 @@ public class DeleteSpecificReservation extends AppCompatActivity {
             }
             else if (JsonString.equals("not found"))
             {
-                Toast.makeText(DeleteSpecificReservation.this, "Delete Failed, Nothing found", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DeleteSpecificReservation.this, "Delete Failed", Toast.LENGTH_SHORT).show();
             }
 
             else{

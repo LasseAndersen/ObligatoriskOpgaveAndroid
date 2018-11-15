@@ -23,17 +23,16 @@ import okhttp3.Response;
 
 public class DeleteReservationActivity extends AppCompatActivity {
 
-    FirebaseUser user;
+    String user;
     String Uri;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_reservation);
-        user =(FirebaseUser) getIntent().getExtras().get("USER");
-        String userId = "11";
-                //user.getUid();
+        user =(String) getIntent().getExtras().get("USERNAME");
 
-        String uri = MessageFormat.format("https://anbo-roomreservation.azurewebsites.net/api/reservations/user/{0}",userId);
+
+        String uri = MessageFormat.format("https://anbo-roomreservation.azurewebsites.net/api/reservations/user/{0}",user);
         Uri = uri;
 
     }
@@ -78,7 +77,7 @@ public class DeleteReservationActivity extends AppCompatActivity {
                     Intent intent = new Intent(getBaseContext(), DeleteSpecificReservation.class);
                     Reservation reservation = (Reservation) parent.getItemAtPosition(position);
                     intent.putExtra("RESERVATION",reservation);
-                    intent.putExtra("USER", user);
+                    intent.putExtra("USERNAME", user);
                     startActivity(intent);
                 }
             });

@@ -28,7 +28,7 @@ public class ReservationInRoomsActivity extends AppCompatActivity {
     int day;
     int month;
     int year;
-    FirebaseUser user;
+    String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class ReservationInRoomsActivity extends AppCompatActivity {
         day = (int) getIntent().getExtras().get("DAY");
         month = (int) getIntent().getExtras().get("MONTH");
         year = (int) getIntent().getExtras().get("YEAR");
-        user = (FirebaseUser) getIntent().getExtras().get("USER");
+        user = (String) getIntent().getExtras().get("USERNAME");
 
         String stringDay = String.valueOf(day);
         String stringMonth = String.valueOf(month);

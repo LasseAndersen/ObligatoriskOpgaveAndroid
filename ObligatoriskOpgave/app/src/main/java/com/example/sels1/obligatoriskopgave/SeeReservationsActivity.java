@@ -22,13 +22,13 @@ import okhttp3.Response;
 
 public class SeeReservationsActivity extends AppCompatActivity {
 
-    FirebaseUser user;
+    String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_see_reservations);
-        user = (FirebaseUser) getIntent().getExtras().get("USER");
+        user = (String) getIntent().getExtras().get("USERNAME");
         GetBuildingsTask buildingTask = new GetBuildingsTask();
         buildingTask.execute("https://anbo-roomreservation.azurewebsites.net/api/buildings");
     }
@@ -69,7 +69,7 @@ public class SeeReservationsActivity extends AppCompatActivity {
                     Intent intent = new Intent(getBaseContext(), RoomsInBuildingActivity.class);
                     Buildings building = (Buildings) parent.getItemAtPosition(position);
                     intent.putExtra("BUILDING", building);
-                    intent.putExtra("USER", user);
+                    intent.putExtra("USERNAME", user);
                     startActivity(intent);
                 }
             });

@@ -28,7 +28,8 @@
         <activity android:name=".AvailableBuildings" />
         <activity android:name=".AvailableRooms" />
         <activity android:name=".SeeMyReservation" />
-        <activity android:name=".DeleteSpecificReservation"></activity>
+        <activity android:name=".DeleteSpecificReservation" />
+        <activity android:name=".LogoutActivity"></activity>
     </application>
 
 </manifest>

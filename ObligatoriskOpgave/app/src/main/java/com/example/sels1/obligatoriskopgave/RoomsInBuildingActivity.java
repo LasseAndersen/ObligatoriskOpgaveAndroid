@@ -28,13 +28,13 @@ import okhttp3.Response;
 public class RoomsInBuildingActivity extends AppCompatActivity {
 
 
-    FirebaseUser user;
+    String user;
     public static Buildings building;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rooms_in_building);
-        user = (FirebaseUser) getIntent().getExtras().get("USER");
+        user = (String) getIntent().getExtras().get("USERNAME");
         building = (Buildings) getIntent().getExtras().get("BUILDING");
         GetRoomTask task = new GetRoomTask();
         task.execute("https://anbo-roomreservation.azurewebsites.net/api/rooms");
@@ -51,7 +51,7 @@ public class RoomsInBuildingActivity extends AppCompatActivity {
             intent.putExtra("DAY", roomDay);
             intent.putExtra("MONTH", roomMonth + 1);
             intent.putExtra("YEAR", roomYear);
-            intent.putExtra("USER",user);
+            intent.putExtra("USERNAME",user);
             startActivity(intent);
 
         }

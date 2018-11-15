@@ -27,7 +27,7 @@ import okhttp3.OkHttpClient;
 
 public class AddReservationActivity extends AppCompatActivity {
 
-   // FirebaseUser user;
+    String user;
     String day;
     String month;
     String year;
@@ -36,10 +36,8 @@ public class AddReservationActivity extends AppCompatActivity {
     EditText toTime;
     EditText purposeEditText;
     Room room;
-    String Json;
     String uri;
-    OkHttpClient okHttpClient = new OkHttpClient();
-    String userId = "11";
+    String userId;
     String fromDateTime;
     String toDateTime;
 
@@ -48,7 +46,7 @@ public class AddReservationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_reservation);
         uri = "https://anbo-roomreservation.azurewebsites.net/api/reservations";
-       // user = (FirebaseUser) getIntent().getExtras().get("USER");
+        user = (String) getIntent().getExtras().get("USERNAME");
         day = String.valueOf(getIntent().getExtras().get("DAY"));
         month = String.valueOf(getIntent().getExtras().get("MONTH"));
         year = String.valueOf(getIntent().getExtras().get("YEAR"));
@@ -67,8 +65,8 @@ public class AddReservationActivity extends AppCompatActivity {
             String purpose = purposeEditText.getText().toString();
             jsonObject.put("fromTimeString", fromDateTime);
             jsonObject.put("toTimeString", toDateTime);
-            jsonObject.put("userID", userId);
-            //jsonObject.put("userId", user.getUid());
+            //jsonObject.put("USERNAME", userId);
+            jsonObject.put("userId", user);
             jsonObject.put("purpose", purpose);
             jsonObject.put("roomId", room.getId());
 
@@ -128,7 +126,7 @@ public class AddReservationActivity extends AppCompatActivity {
             Toast.makeText(AddReservationActivity.this, "Post Success", Toast.LENGTH_SHORT).show();
             Log.d("POST WORKED", "YAY");
             Intent intent = new Intent( getBaseContext(), SeeReservationsActivity.class);
-            intent.putExtra("USER", userId);
+            intent.putExtra("USERNAME", userId);
             intent.putExtra("DAY", day);
             intent.putExtra("MONTH", month);
             intent.putExtra("YEAR", year);

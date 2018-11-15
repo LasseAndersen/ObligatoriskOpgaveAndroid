@@ -13,14 +13,14 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class UserLogInActivity extends AppCompatActivity {
 
-    FirebaseUser user;
+    String user;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_log_in);
-        user =(FirebaseUser) getIntent().getExtras().get("USER");
+        user =(String) getIntent().getExtras().get("USERNAME");
         //Toolbar toolbar = findViewById(R.id.LoginToolbar);
         //setSupportActionBar(toolbar);
 }
@@ -37,7 +37,8 @@ public class UserLogInActivity extends AppCompatActivity {
         switch (item.getItemId())
         {
             case R.id.logOut:
-                Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                Intent intent = new Intent(getBaseContext(), LogoutActivity.class);
+                intent.putExtra("USERNAME", user);
                 startActivity(intent);
 
         }
@@ -48,18 +49,18 @@ public class UserLogInActivity extends AppCompatActivity {
 
     public void ViewReservations(View view){
         Intent intent = new Intent(this, SeeReservationsActivity.class);
-        intent.putExtra("USER", user);
+        intent.putExtra("USERNAME", user);
         startActivity(intent);
     }
 
     public void AddReservation(View v){
         Intent intent = new Intent(this, AvailableBuildings.class);
-        intent.putExtra("USER", user);
+        intent.putExtra("USERNAME", user);
         startActivity(intent);
     }
     public void DeleteReservation(View v){
         Intent intent = new Intent(this, DeleteReservationActivity.class);
-        intent.putExtra("USER", user);
+        intent.putExtra("USERNAME", user);
         startActivity(intent);
     }
 }
